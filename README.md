@@ -25,7 +25,7 @@ Commencez par cloner le dépôt Git contenant le code source de l'application :
 
 ```bash
 git clone https://github.com/KAlecs12/Docker-Ynov
-
+```
 ### 2. Configuration du .env
 
 Fichier .env à ajouter au dossier backend :
@@ -37,24 +37,24 @@ DB_USER=user
 DB_PASSWORD=password
 DB_NAME=dockerYnov
 NODE_ENV=production
-
+```
 Fichier .env a ajouter au dossier frontend :
 
 ```bash
 REACT_APP_API_URL=http://localhost:3000
-
+```
 ### 3. Lancer l'application avec Docker Compose
 
 Une fois le dépôt cloné et les fichiers .env configurés, lancer l'application avec Docker Compose :
 
 ```bash
 docker-compose up --build
-
+```
 ### 4. Arrêt et suppression des conteneurs
 
 Pour arrêter et supprimer les conteneurs, ainsi que les réseaux et volumes associés, exécuter la commande suivante :
 
 ```bash
 docker-compose down
-
+```
 
