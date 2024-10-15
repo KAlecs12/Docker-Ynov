@@ -1,0 +1,29 @@
+# Docker Back
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+FROM node:18-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV DB_HOST=db
+ENV DB_PORT=5432
+ENV DB_USER=user
+ENV DB_PASSWORD=password
+ENV DB_NAME=dockerYnov
+
+COPY --from=builder /app /app
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
